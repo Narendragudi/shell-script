@@ -12,11 +12,12 @@ LOGFILE="/tmp/$0-$TIMESTAMP.log"
 echo "script started executing ar $TIMESTAMP" &>> $LOGFILE
 
 VALIDATE (){
-    [$1 -ne 0 ]
+    if [$1 -ne 0 ]
     then 
         echo -e "$2 ...$R FAILED $N"
     else
         echo -e "$2 ...$G SUCCESS $N"
+    fi
 }
 
 if [ $ID -ne 0 ]
